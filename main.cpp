@@ -6,7 +6,17 @@
 
 glm::vec3 calculateColor(glm::uvec2 pos)
 {
-  return {0.2, 0.2, 1};
+  auto x = pos.x;
+  auto y = pos.y;
+
+  if((x/16) % 2 == 0 ^ (y/16) % 2 == 0)
+  {
+    return {0,0,0};
+  }
+  else
+  {
+    return {1, 1, 1};
+  }
 }
 
 int main()
